@@ -27,7 +27,7 @@
 
 │   │   ├── **main.tf** - Define los recursos Cloud con variables, en lugar de codificarlas.
 
-│   │   ├── **outputs.tf** - Almacena las salidas de Terraform para las dependencias; proporciona resultados para las configuraciones
+│   │   ├── **outputs.tf** - Almacena salidas de Terraform para las dependencias; da los resultados para las configuraciones
 
 │   │   ├── **terraform.tfvars** - Proporciona valores para las variables
 
@@ -41,7 +41,7 @@
 
 │       └── **...** - Misma estructura que development
 
-├── **modules** - Componentes de Infraestructura reutilizables, asegura consistencia, despliegue rápido, evita código duplicado
+├── **modules** - Componentes de Infraestructura reutilizables, logra consistencia, despliegue rápido, y evita duplicado
 
 │   ├── **ec2** - Modulo que maneja instancias EC2 eficientemente.
 
