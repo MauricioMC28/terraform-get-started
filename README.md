@@ -27,7 +27,7 @@
 
 │   │   ├── **main.tf** - Define los recursos Cloud con variables, en lugar de codificarlas.
 
-│   │   ├── **outputs.tf** - Almacena salidas de Terraform para las dependencias; da los resultados para las configuraciones
+│   │   ├── **outputs.tf** - Salidas para las configuraciones de Terraform para dependencias
 
 │   │   ├── **terraform.tfvars** - Proporciona valores para las variables
 
