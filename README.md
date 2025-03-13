@@ -66,6 +66,7 @@
 │    └── **teardown.sh** - Destruye infraestructura para ahorrar costos
 
 __Core Terraform Files__ - Es el Cerebro de la infraestructura
+
 ├── **backend.tf** - Define la configuración Backend (S3 o Terraform Cloud)
 
 ├── **main.tf**
