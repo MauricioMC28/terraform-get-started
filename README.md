@@ -22,36 +22,55 @@
 **Distribucion de archivos en un proyecto de Terraform**
 
 ├── **environments** - multiples entornos, evita accidentes en producción, logra modularidad y reutilización.
-│   ├── **development**
-│   │   ├── **main.tf** - Define los recursos Cloud con variables, en lugar de codificarlas
-│   │   ├── **outputs.tf**
-│   │   ├── **terraform.tfvars**
-│   │   └── **variables.tf** - Declara variables y tipo sin valores
-│   ├── **production**
-│   │   ├── **main.tf**
+
+│   ├── **development** - Configuraciones del entorno de desarrollo
+
+│   │   ├── **main.tf** - Define los recursos Cloud con variables, en lugar de codificarlas.
+
 │   │   ├── **outputs.tf** - Almacena las salidas de Terraform para las dependencias; proporciona resultados para las configuraciones
+
 │   │   ├── **terraform.tfvars** - Proporciona valores para las variables
-│   │   └── **variables.tf**
-│   └── **staging**
-│       ├── **main.tf**
-│       ├── **outputs.tf**
-│       ├── **terraform.tfvars**
-│       └── **variables.tf**
+
+│   │   └── **variables.tf** - Declara variables y tipo sin valores
+
+│   ├── **production** - Configuraciones del entorno de producción
+
+│   │   └── **...** - Misma estructura que development
+
+│   └── **staging** - Configuraciones del entorno de ensayo
+
+│       └── **...** - Misma estructura que development
+
 ├── **modules** - Componentes de Infraestructura reutilizables, asegura consistencia, despliegue rápido, evita código duplicado
-│   ├── **ec2** - Modulo que maneja instancias EC2 eficientemente
+
+│   ├── **ec2** - Modulo que maneja instancias EC2 eficientemente.
+
 │   │   ├── **main.tf**
+
 │   │   ├── **outputs.tf**
+
 │   │   └── **variables.tf**
+
 │   └── **vpc** - Maneja la creación de Virtual Private Cloud
+
 │       ├── **main.tf**
+
 │       ├── **outputs.tf**
+
 │       └── **variables.tf**
+
 ├── **scripts** - Automatiza los flujos de trabajo de Terraform, ahorra tiempo en operaciones y reduce errores manuales
+
 │    ├── **init.sh** - Inicia Terraform antes de aplicar las configuraciones
+
 │    └── **teardown.sh** - Destruye infraestructura para ahorrar costos
+
 __Core Terraform Files__ - Es el Cerebro de la infraestructura
 ├── **backend.tf** - Define la configuración Backend (S3 o Terraform Cloud)
-├── **main.tf** - 
-├── **outputs.tf** - 
+
+├── **main.tf**
+
+├── **outputs.tf**
+
 ├── **provider.tf** - Define la configuración del proveedor (AWS, Azure)
-└── **variables.tf** - 
+└── **variables.tf**
