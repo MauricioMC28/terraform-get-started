@@ -45,19 +45,19 @@
 
 │   ├── **ec2** - Modulo que maneja instancias EC2 eficientemente.
 
-│   │   ├── **main.tf**
+│   │   ├── **main.tf** - Configuración de computo
 
-│   │   ├── **outputs.tf**
+│   │   ├── **outputs.tf** - Salidas para instancias IPs
 
-│   │   └── **variables.tf**
+│   │   └── **variables.tf** - Variables de entrada para la configuración de instancias
 
 │   └── **vpc** - Maneja la creación de Virtual Private Cloud
 
-│       ├── **main.tf**
+│       ├── **main.tf** - Define VPC, subredes, etc
 
-│       ├── **outputs.tf**
+│       ├── **outputs.tf** - Salidas para VPC, IDs de subredes
 
-│       └── **variables.tf**
+│       └── **variables.tf** - Variables de entrada para configuraciones de VPC
 
 ├── **scripts** - Automatiza los flujos de trabajo de Terraform, ahorra tiempo en operaciones y reduce errores manuales
 
