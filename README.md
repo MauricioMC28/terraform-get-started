@@ -1,3 +1,4 @@
+<p align='center'><img src='logo.svg' align='center' height='100'></p>
 <h1 align='center'>Aprendiendo Terraform</h1>
 
 <p align='center'>Es una herramienta de Infraestructura como Código(IaC), que permite administrar infraestructura con archivos de configuración en lugar de una Interfaz gráfica.</p>
