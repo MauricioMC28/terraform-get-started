@@ -7,19 +7,17 @@
 ![Enlace a Terraform](https://www.terraform.io/)
 ![Tutorial a Terraform Docker](https://developer.hashicorp.com/terraform/tutorials/docker-get-started)
 
-**Requerimientos**:
+**Requerimientos para este tutorial**:
 
-- Entorno Linux: 
-- Docker instalado:
-- Terraform instalado:
+- Entorno Linux: ![Descarga](https://gist.github.com/MauricioMC28/90fee9f004f46a7b392e534298abf892)
+- Docker instalado en el entorno Linux: ![Descarga](https://github.com/MauricioMC28/Tools-for-DevOps/tree/main/debian)
 
-**Procedimientos del tutorial 1 (Install)**
+**Contenido del curso**
 
-1. Instala Terraform en Linux distro Debian 12.
-2. Crea directorio llamado _Aprende-terraform-docker-container_
-3. Crea un archivo de configuración de Terraform llamado `main.tf`
-4. Inicia el proyecto (Instala los plugins que Terraform necesita para interactuar con Docker)`terraform init`
-5. Realiza los cambios `terraform apply`.
-6. Revisa que el contenedor se encuentre en ejecución `docker ps`.
-7. Termina el contenedor `terraform destroy`.
-8. Fin de tutorial 1
+1. ¿Qué es Infraestructura como Código con Terraform?
+2. Instala Terraform
+3. Construir infraestructura 
+4. Cambia la infraestructura
+5. Destruir infraestructura
+6. Define variables de entrada
+7. Consulta de datos con salidas
