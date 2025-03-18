@@ -1,13 +1,56 @@
 <h1 align='center'>Construye infraestructura (Build) - Tutorial 3</h1>
 
-<p>Utiliza Terraform para desplegar un contenedor de Docker, formatea tu configuración de Terraform, y revisa el status de tu infraestructura.</p>
+<p>
+Utiliza Terraform para desplegar un contenedor de Docker, formatea tu configuración de Terraform, y revisa el status de tu infraestructura.
+En este tutorial, se revisara la configuracion previa del contenedor Docker
+</p>
 
-1. Completar el tutorial 2
-2. Revisar la configuración del archivo `main.tf` del tutorial 2
-    - `terraform {}` contiene las configuraciones de Terraform, incluyendo el proveedor que Terraform utilizará para provisionar la infraestructura.
-        - `required_providers` Bloque donde se declara el proveedor
-            - `source` Atributo que define el _hostname_, _namespace_, y el _tipo de proveedor_.
-                - El tipo de proveedor que Terraform instala, los obtiene del ![Registro de Terraform](https://registry.terraform.io/?product_intent=terraform).
-                - `version` Atributo que establece la versión definida por el proveedor
-    - `provider "" {}` Bloque que configura al proveedor especificado, ejemplo, _docker_
-. Fin del tutorial 3
+### Contenido del tutorial
+
+1. Completar el tutorial [Install](../1-install/)
+2. Revisar la configuración [archivo main.tf](/###Bloques-y-atributos-del-archivo-main.tf)
+3. Inicia el directorio [Comando init](/####Inicializa "Comando de terraform")
+4. Formatea y valida la configuración [Comando fmt y validate](/####Formatea-y-valida "Comandos de terraform")
+5. Crea la infraestructura [Comando apply](/####Crea-infraestructura "Comando de terraform")
+6. Inspecciona el estado [Comando show y state](/####Inspecciona-estado)
+7. Fin del tutorial 3
+
+### Bloques y atributos del archivo main.tf
+
+| Bloque              | Descripción |
+| :---------------- | :------: |
+| `terraform {}`        |   Contiene las configuraciones de Terraform, incluyendo el proveedor que Terraform utilizará para provisionar la infraestructura.   |
+| `required_providers` |   Se declara el proveedor   |
+| `provider`           |   Configura el proveedor especificado, por ejemplo, _docker_. Se puede usar multiple proveedores    |
+| `resource`    |  Define componentes de la infraestructura; podría ser un componente físico o virtual como un contenedor o lógico como una aplicación Heroku. ontiene argumentos para configurar los recursos como tamaño de la máquina, nombres de imágenes de disco, o IDs de VPC.   |
+
+> [!Note]
+> El proveedor mencionado en el atributo `source` que Terraform instala, se obtiene de [Registro de Terraform](https://registry.terraform.io/?product_intent=terraform).
+
+| Atributos   |   Descripción   |
+| :---------- | :-------------: |
+| `source`   |   Atributo que define el _hostname_, _namespace_, y el _tipo de proveedor_   |
+| `version`   |   Atributo que establece la versión definida por el proveedor   |
+
+### Comandos
+
+#### Inicializa
+
+- `terraform init` Para crear una nueva configuración. El comando descarga el proveedor definido (docker) en un subdirectorio llamado `.terraform` en el directorio actual, muestra la versión del proveedor instalado y crea un archivo de bloqueo llamado `.terraform.lock.hcl`
+
+#### Formatea y valida
+
+- `terraform fmt` Actualiza los archivos de configuración de terraform del directorio actual que facilita la legibilidad y la coherencia.
+- `terraform validate` Valida si la configuración es sintácticamente valida y consistente.
+
+#### Crea infraestructura
+
+- `terraform apply` Aplica la configuración, primero imprime en pantalla las acciones a ejecutar (_plan de ejecución_), si todo es correcto, escribe `yes`, despues tecla Enter.
+
+>[!Note]
+> El comando `apply` crea y escribe datos en un archivo llamado `terraform.tfstate`. Almacena los IDs y las propiedades de los recursos que administra, es requerido para actualizar o destruir recursos. Contiene información confidencial, por lo que se debe asegurar y restringir a solo miembros de confianza. Se puede almacenar en _HCP Terraform_ o _Terraform Enterprise_, u otro que sea compatible con Terraform.
+
+#### Inspecciona estado
+
+- `terraform show` Inspecciona el estado actual del proyecto
+- `terraform state` Gestión avanzanda del estado. Usa el subcomando `terraform state list` para listar los recursos.
