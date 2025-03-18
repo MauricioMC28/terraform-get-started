@@ -14,7 +14,7 @@ En este tutorial, se revisara la configuracion previa del contenedor Docker
 4. Formatea y valida la configuración [Comando `fmt` y `validate`](#formatea-y-valida "Comandos de terraform")
 5. Crea la infraestructura [Comando `apply`](#crea-infraestructura "Comando de terraform")
 6. Inspecciona el estado [Comando `show` y `state`](#inspecciona-estado)
-7. Fin del tutorial Build
+
 
 ### Bloques y atributos del archivo main.tf
 
