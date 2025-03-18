@@ -1,3 +1,5 @@
+<p align='center'><img src='logo.svg' align='center' height='100'></p>
+
 <h1 align='center'>Aprende Terraform Docker container</h1>
 
 <p align='center'>Esta práctica consiste en aprender a levantar infraestructura de Docker utilizando la herramienta IoC Terraform desde un ambiente Linux</p>
