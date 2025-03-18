@@ -5,7 +5,7 @@
 
 ### Contenido del tutorial 
 
-1. [Instala Terraform en Linux distro Debian 12](install-for-linux-debiansh).
+1. [Instala Terraform en Linux distro Debian 12](install-for-linux-debian.sh).
 2. Crea directorio llamado [_Aprende-terraform-docker-container_](aprende-terraform-docker-container)
 3. Crea un archivo de configuración de Terraform llamado [`main.tf`](aprende-terraform-docker-container/main.tf)
 4. Inicia el proyecto (Instala los plugins que Terraform necesita para interactuar con Docker)`terraform init`
