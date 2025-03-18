@@ -9,8 +9,8 @@
 
 **Requerimientos para este tutorial**:
 
-- Entorno Linux: ![Descarga](https://gist.github.com/MauricioMC28/90fee9f004f46a7b392e534298abf892)
-- Docker instalado en el entorno Linux: ![Descarga](https://github.com/MauricioMC28/Tools-for-DevOps/tree/main/debian)
+- Entorno Linux: [Descarga](https://gist.github.com/MauricioMC28/90fee9f004f46a7b392e534298abf892)
+- Docker instalado en el entorno Linux: [Descarga](https://github.com/MauricioMC28/Tools-for-DevOps/tree/main/debian)
 
 **Contenido del curso**
 
