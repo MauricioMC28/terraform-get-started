@@ -1,4 +1,4 @@
-<p align='center'><img src='logo.svg' align='center' height='100'></p>
+<p align='center'><img src='/logo.svg' align='center' height='100'></p>
 <h1 align='center'>Construye infraestructura (Build) - Tutorial 3</h1>
 
 <p>
@@ -8,7 +8,7 @@ En este tutorial, se revisara la configuracion previa del contenedor Docker
 
 ### Contenido del tutorial
 
-1. Completar el tutorial [Install](1-install)
+1. Completar el tutorial [Install](/docker-tutorial/1-install/)
 2. Revisar la configuración [Archivo main.tf](#bloques-y-atributos-del-archivo-maintf)
 3. Inicia el directorio [Comando `init`](#inicializa "Comando de terraform")
 4. Formatea y valida la configuración [Comando `fmt` y `validate`](#formatea-y-valida "Comandos de terraform")
