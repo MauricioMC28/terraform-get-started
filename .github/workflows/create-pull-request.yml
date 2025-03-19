@@ -23,4 +23,4 @@ jobs:
                   title: 'Pull Request automático'
                   body: |
                     Este Pull Request fue generado automáticamente para actualizar la rama main con los últimos cambios 
-                    
+                  base: 'main'
