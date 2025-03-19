@@ -1,26 +1,17 @@
-name: Pull Request automátizado
-
-on: 
-    push: 
+name: Flujo de trabajo Auto Merge a Main
+on:
+    pull_request: 
         branches:
-            - '*'
-        tags-ignore: 
-            - 'main'
-
+            - main
 jobs:
-    create-pull-request:
+    auto-merge:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout code
-              uses: actions/checkout@v1
+            - name: Check out repository
+              uses: actions/checkout@v4
 
-            - name: Create Pull Request
-              uses: peter-evans/create-pull-request@v4
-              with:
-                  token: ${{ secrets.GITHUB_TOKEN }}
-                  commit-message: 'Auto-generated pull request'
-                  branch: 'main'
-                  title: 'Pull Request automático'
-                  body: |
-                    Este Pull Request fue generado automáticamente para actualizar la rama main con los últimos cambios 
-                  base: 'main'
+            - name: Enable auto-merge
+              run: |
+                gh pr merge --auto --squash --repo ${{ github.repository }} ${{ github.event.pull_request.number }}
+              env:
+                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
