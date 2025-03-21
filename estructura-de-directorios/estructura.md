@@ -1,4 +1,4 @@
-<p align='center'><img src='/logo.svg' lenght='100' align='center'></p>
+<p align='center'><img src='/logo.svg' align='center' height='100'></p>
 
 <h1> Distribucion de archivos en un proyecto de Terraform</h1>
 
