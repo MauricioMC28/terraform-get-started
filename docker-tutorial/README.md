@@ -1,4 +1,4 @@
-<p align='center'><img src='logo.svg' align='center' height='100'></p>
+<p align='center'><img src='/logo.svg' align='center' height='100'></p>
 
 <h1 align='center'>Aprende Terraform Docker container</h1>
 
