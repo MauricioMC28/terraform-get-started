@@ -7,6 +7,8 @@
 ### Contenido
 
 1. [Requisitos previos](#requisitos-previos)
+2. [Establece el nombre del contenedor con una variable](#establece-el-nombre-del-contenedor-con-una-variable)
+3. [Aplica la configuración](#aplica-la-configuración)
 
 ### Requisitos previos
 
