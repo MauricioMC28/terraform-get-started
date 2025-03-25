@@ -58,90 +58,88 @@ CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS   
 - Ejemplo de salida:
 
     ```sh
-    [0m[1mdocker_image.nginx: Refreshing state... [id=sha256:53a18edff8091d5faff1e42b4d885bc5f0f897873b0b8f0ace236cd5930819b0nginx:latest][0m
-[0m[1mdocker_container.nginx: Refreshing state... [id=05aff7e620fc61bf34ecefc25c96f24a2b8087c4d3e0d7a2d63dcb7ed97519ba][0m
+    docker_image.nginx: Refreshing state... [id=sha256:53a18edff8091d5faff1e42b4d885bc5f0f897873b0b8f0ace236cd5930819b0nginx:latest]
+    docker_container.nginx: Refreshing state... [id=05aff7e620fc61bf34ecefc25c96f24a2b8087c4d3e0d7a2d63dcb7ed97519ba]
 
-Terraform used the selected providers to generate the following execution
-plan. Resource actions are indicated with the following symbols:
-[31m-[0m/[32m+[0m destroy and then create replacement[0m
+    Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+    -/+ destroy and then create replacement
 
-Terraform will perform the following actions:
+    Terraform will perform the following actions:
 
-[1m  # docker_container.nginx[0m must be [1m[31mreplaced[0m
-[0m[31m-[0m/[32m+[0m[0m resource "docker_container" "nginx" {
-      [32m+[0m[0m bridge                                      = (known after apply)
-      [33m~[0m[0m command                                     = [
-          [31m-[0m[0m "nginx",
-          [31m-[0m[0m "-g",
-          [31m-[0m[0m "daemon off;",
+        # docker_container.nginx must be replaced
+    -/+ resource "docker_container" "nginx" {
+        + bridge                                      = (known after apply)
+        ~ command                                     = [
+          - "nginx",
+          - "-g",
+          - "daemon off;",
         ] -> (known after apply)
-      [32m+[0m[0m container_logs                              = (known after apply)
-      [31m-[0m[0m cpu_shares                                  = 0 [90m-> null[0m[0m
-      [31m-[0m[0m dns                                         = [] [90m-> null[0m[0m
-      [31m-[0m[0m dns_opts                                    = [] [90m-> null[0m[0m
-      [31m-[0m[0m dns_search                                  = [] [90m-> null[0m[0m
-      [33m~[0m[0m entrypoint                                  = [
-          [31m-[0m[0m "/docker-entrypoint.sh",
+      + container_logs                              = (known after apply)
+      - cpu_shares                                  = 0 -> null
+      - dns                                         = [] -> null
+      - dns_opts                                    = [] -> null
+      - dns_search                                  = [] -> null
+      ~ entrypoint                                  = [
+          - "/docker-entrypoint.sh",
         ] -> (known after apply)
-      [33m~[0m[0m env                                         = [] -> (known after apply)
-      [32m+[0m[0m exit_code                                   = (known after apply)
-      [31m-[0m[0m group_add                                   = [] [90m-> null[0m[0m
-      [33m~[0m[0m hostname                                    = "05aff7e620fc" -> (known after apply)
-      [33m~[0m[0m id                                          = "05aff7e620fc61bf34ecefc25c96f24a2b8087c4d3e0d7a2d63dcb7ed97519ba" -> (known after apply)
-      [33m~[0m[0m init                                        = false -> (known after apply)
-      [33m~[0m[0m ipc_mode                                    = "private" -> (known after apply)
-      [33m~[0m[0m log_driver                                  = "json-file" -> (known after apply)
-      [31m-[0m[0m log_opts                                    = {} [90m-> null[0m[0m
-      [31m-[0m[0m max_retry_count                             = 0 [90m-> null[0m[0m
-      [31m-[0m[0m memory                                      = 0 [90m-> null[0m[0m
-      [31m-[0m[0m memory_swap                                 = 0 [90m-> null[0m[0m
-      [33m~[0m[0m name                                        = "ExampleNginxContainer" [33m->[0m[0m "YetAnotherName" [31m# forces replacement[0m[0m
-      [33m~[0m[0m network_data                                = [
-          [31m-[0m[0m {
-              [31m-[0m[0m gateway                   = "172.17.0.1"
-              [31m-[0m[0m global_ipv6_prefix_length = 0
-              [31m-[0m[0m ip_address                = "172.17.0.2"
-              [31m-[0m[0m ip_prefix_length          = 16
-              [31m-[0m[0m mac_address               = "02:42:ac:11:00:02"
-              [31m-[0m[0m network_name              = "bridge"
-                [90m# (2 unchanged attributes hidden)[0m[0m
-            },
+      ~ env                                         = [] -> (known after apply)
+      + exit_code                                   = (known after apply)
+      - group_add                                   = [] -> null
+      ~ hostname                                    = "05aff7e620fc" -> (known after apply)
+      ~ id                                          = "05aff7e620fc61bf34ecefc25c96f24a2b8087c4d3e0d7a2d63dcb7ed97519ba" -> (known after apply)
+      ~ init                                        = false -> (known after apply)
+      ~ ipc_mode                                    = "private" -> (known after apply)
+      ~ log_driver                                  = "json-file" -> (known after apply)
+      - log_opts                                    = {} -> null
+      - max_retry_count                             = 0 -> null
+      - memory                                      = 0 -> null
+      - memory_swap                                 = 0 -> null
+      ~ name                                        = "ExampleNginxContainer" -> "YetAnotherName" # forces replacement
+      ~ network_data                                = [
+        - {
+            - gateway                   = "172.17.0.1"
+            - global_ipv6_prefix_length = 0
+            - ip_address                = "172.17.0.2"
+            - ip_prefix_length          = 16
+            - mac_address               = "02:42:ac:11:00:02"
+            - network_name              = "bridge"
+                # (2 unchanged attributes hidden)
+          },
         ] -> (known after apply)
-      [31m-[0m[0m network_mode                                = "bridge" [90m-> null[0m[0m [31m# forces replacement[0m[0m
-      [31m-[0m[0m privileged                                  = false [90m-> null[0m[0m
-      [31m-[0m[0m publish_all_ports                           = false [90m-> null[0m[0m
-      [33m~[0m[0m runtime                                     = "runc" -> (known after apply)
-      [33m~[0m[0m security_opts                               = [] -> (known after apply)
-      [33m~[0m[0m shm_size                                    = 64 -> (known after apply)
-      [33m~[0m[0m stop_signal                                 = "SIGQUIT" -> (known after apply)
-      [33m~[0m[0m stop_timeout                                = 0 -> (known after apply)
-      [31m-[0m[0m storage_opts                                = {} [90m-> null[0m[0m
-      [31m-[0m[0m sysctls                                     = {} [90m-> null[0m[0m
-      [31m-[0m[0m tmpfs                                       = {} [90m-> null[0m[0m
-        [90m# (20 unchanged attributes hidden)[0m[0m
+      - network_mode                                = "bridge" -> null # forces replacement
+      - privileged                                  = false -> null
+      - publish_all_ports                           = false -> null
+      ~ runtime                                     = "runc" -> (known after apply)
+      ~ security_opts                               = [] -> (known after apply)
+      ~ shm_size                                    = 64 -> (known after apply)
+      ~ stop_signal                                 = "SIGQUIT" -> (known after apply)
+      ~ stop_timeout                                = 0 -> (known after apply)
+      - storage_opts                                = {} -> null
+      - sysctls                                     = {} -> null
+      - tmpfs                                       = {} -> null
+        # (20 unchanged attributes hidden)
 
-      [33m~[0m[0m healthcheck (known after apply)
+      ~ healthcheck (known after apply)
 
-      [33m~[0m[0m labels (known after apply)
+      ~ labels (known after apply)
 
-        [90m# (1 unchanged block hidden)[0m[0m
-    }
+        # (1 unchanged block hidden)
+       }
 
-[1mPlan:[0m 1 to add, 0 to change, 1 to destroy.
-[0m[0m[1m
-Do you want to perform these actions?[0m
-  Terraform will perform the actions described above.
-  Only 'yes' will be accepted to approve.
+    Plan: 1 to add, 0 to change, 1 to destroy.
 
-  [1mEnter a value:[0m [0m
-[0m[1mdocker_container.nginx: Destroying... [id=05aff7e620fc61bf34ecefc25c96f24a2b8087c4d3e0d7a2d63dcb7ed97519ba][0m[0m
-[0m[1mdocker_container.nginx: Destruction complete after 1s[0m
-[0m[1mdocker_container.nginx: Creating...[0m[0m
-[0m[1mdocker_container.nginx: Creation complete after 1s [id=3e51cbb92a0024cf6ba58d43cbe06ef859da78dab84d03fa1a7c86435541f142][0m
-[0m[1m[32m
-Apply complete! Resources: 1 added, 0 changed, 1 destroyed.
-[0m
-```
+    Do you want to perform these actions?
+    Terraform will perform the actions described above.
+    Only 'yes' will be accepted to approve.
+
+    Enter a value: yes
+    docker_container.nginx: Destroying... [id=05aff7e620fc61bf34ecefc25c96f24a2b8087c4d3e0d7a2d63dcb7ed97519ba]
+    docker_container.nginx: Destruction complete after 1s
+    docker_container.nginx: Creating...
+    docker_container.nginx: Creation complete after 1s [id=3e51cbb92a0024cf6ba58d43cbe06ef859da78dab84d03fa1a7c86435541f142]
+
+    Apply complete! Resources: 1 added, 0 changed, 1 destroyed.
+    ```
 
 > [!Note]
 > Configurar variables desde la línea de comandos no guarda sus valores.
