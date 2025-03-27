@@ -1,4 +1,4 @@
-name: 'Terraform pipeline'
+name: 'PULL REQUEST AUTOMATIZADO'
 
 on:
     push:
@@ -16,7 +16,7 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v4
 
-            - name: Pull request automatico
+            - name: Pull Request Automatico
               env:
                 GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               run: |
