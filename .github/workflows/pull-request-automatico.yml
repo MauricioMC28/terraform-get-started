@@ -1,0 +1,30 @@
+name: 'PULL REQUEST AUTOMATIZADO'
+
+on:
+    push:
+        branches-ignore: 
+            - main
+
+jobs: 
+    pull-request-automatico:
+        runs-on: ubuntu-latest
+        permissions: 
+            contents: write
+            pull-requests: write
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Pull Request Automatico
+              env:
+                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                BRANCH_NAME=$(echo "${{ github.ref }}" | sed 's|refs/heads/||')
+                PR_TITLE="PR Automatizado: Merge $BRANCH_NAME into main"
+
+                gh pr create \
+                    --base main \
+                    --head "$BRANCH_NAME" \
+                    --title "$PR_TITLE" \
+                    --body "ESTE PULL REQUEST FUE CREADO AUTOMATICAMENTE DESDE LA RAMA $BRANCH_NAME."

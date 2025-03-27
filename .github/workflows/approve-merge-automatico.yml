@@ -1,0 +1,29 @@
+name: 'APPROVE & MERGE AUTOMATIZADO'
+
+on: 
+    pull_request: 
+        branches: 
+            - main
+
+jobs:
+    approve-y-merge-automatico:
+        runs-on: ubuntu-latest
+        permissions: 
+            contents: write
+            pull-requests: write
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+            
+            - name: Approve Pull Request Automatico
+              env:
+                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                gh pr review ${{ github.event.pull_request.number }} --approve
+
+            - name: Merge Pull Request Automatico
+              env:
+                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                gh pr merge ${{ github.event.pull_request.number }} --squash --auto
