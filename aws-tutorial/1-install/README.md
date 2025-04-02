@@ -6,10 +6,8 @@
 
 ### Contenido
 
-1. [](#)
-2. [](#)
-3. [](#)
-4. [](#)
+1. [Instala Terraform](#instala-terraform)
+2. [Verifica la intalación](#verifica-la-instalación)
 
 ### Instala Terraform
 Terraform ofrece varias maneras de instalación: __Manual__, __Homebrew on macOS__, __Chocolatey en Windows__, y __Linux__.
