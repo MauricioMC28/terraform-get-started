@@ -91,21 +91,69 @@ resource "aws_instance" "app_server" {
 - `Providers` Bloque configura el proveedor especificado. Es un plugin
 - `Resources` Bloque que define componentes en la infraestructura. Este bloque contiene argumentos, puede incluir, como tamaño de máquinas, nombre de discos, o VPC IDs.
     - El tipo de recurso del ejemplo es `aws_instance` y el nombre es `app_server`.
+    - La instancia EC2 del ejemplo, establece una imagen Ubuntu y la instancia tipo `t2.micro`.
 
 ### Inicia el directorio
 
+Ingresa al directorio `` y ejecuta el siguiente comando
 
+```sh
+terraform init
+```
 
 ### Formatea y valida la configuración
 
+El siguiente comando actualiza las configuraciones dentro del directorio para legilibilidad y consistencia:
 
+```sh
+terraform fmt
+```
+
+Este otro comando valida si la sintaxis de la configuración es correcta:
+
+```sh
+terraform validate
+```
 
 ### Crea infraestructura
 
+Utiliza el siguiente comando para aplicar la configuración
 
+```sh
+terraform apply
+```
+
+El comando anterior imprime en pantalla el plan de ejecución que realizará en la infraestructura. El `+`, significa que Terraform creará ese recurso.
+
+Escribe Yes para aplicar los cambios.
+
+```sh
+Enter a value: yes
+```
+
+Ve a la [consola de AWS](https://console.aws.amazon.com/ec2/v2/home?region=us-west-2#Instances:sort=instanceId) y verifica que la instancia EC2 este en ejecución.
+
+> [!Note]
+> La instancia se creo en la región `us-east-1`. Asegura que la consola AWS se encuentre en está región.
 
 ### Inspecciona estado
 
+Terraform crea un archivo llamado `terraform.tfstate` dentro del directorio donde se aplica la configuración; el archivo almacena IDs y propiedades de los recursos. Se recomienda que se almacene de manera segura, con restricciones y de manera remota el archivo `tfstate` en un entorno de producción.
+
+Inspecciona el estado actual de la infraestructura con el comando:
+
+```sh
+terraform show
+```
+
+El comando `terraform state` gestiona de manera avanzada el estado, el siguiente comando enumera los recursos en el estado del proyecto.
+
+```sh
+terraform state list
+```
 
 ### Troubleshooting
 
+- Utiliza el comando `terraform validate` para verificar la sintaxis.
+- Verifica que la región coincida, por ejemplo, en AWS CLI configuramos `us-east-1`, misma para la configuración y misma para la consola de AWS.
+- Es necesario contar con una VPC dentro de nuestra cuenta AWS y en la región correcta.
