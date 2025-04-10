@@ -1,8 +1,8 @@
 terraform {
   required_providers {
     aws = {
-        source = "hashicorp/aws"
-        version = "~> 4.16"
+      source  = "hashicorp/aws"
+      version = "~> 4.16"
     }
   }
 
@@ -14,7 +14,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "app_server" {
-  ami = "ami-830c94e3"
+  ami           = "ami-00a929b66ed6e0de6"
   instance_type = "t2.micro"
 
   tags = {
