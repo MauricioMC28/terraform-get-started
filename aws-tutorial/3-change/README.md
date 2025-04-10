@@ -79,3 +79,11 @@ terraform apply
 Los prefijos `+/-` significa que Terraform destruirá y volverá a crear recursos.
 
 Acepta los cambios respondiendo `yes` dentro de la consola.
+
+Visualiza los nuevos cambios con el comando:
+
+```sh
+terraform show
+```
+
+Vea ejemplo de los cambios en el siguiente enlace: [terraform apply](learn-terraform-aws-instance/terraform-apply.md)
