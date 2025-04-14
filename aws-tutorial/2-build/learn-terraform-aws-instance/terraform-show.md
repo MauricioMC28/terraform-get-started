@@ -1,3 +1,4 @@
+```sh
 # aws_instance.app_server:
 resource "aws_instance" "app_server" {
     ami                                  = "ami-00a929b66ed6e0de6"
@@ -96,3 +97,4 @@ resource "aws_instance" "app_server" {
         volume_type           = "gp3"
     }
 }
+```
