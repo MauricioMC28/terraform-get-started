@@ -1,3 +1,4 @@
+```sh
 Terraform used the selected providers to generate the following execution plan. Resource
 actions are indicated with the following symbols:
   + create
@@ -86,3 +87,4 @@ aws_instance.app_server: Still creating... [10s elapsed]
 aws_instance.app_server: Creation complete after 13s [id=i-0afeb9d9f48d897c1]
 
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+```
