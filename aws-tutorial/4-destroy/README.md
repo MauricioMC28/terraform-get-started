@@ -16,3 +16,11 @@ Ingresa a la carpeta `learn-terraform-aws-instance` y utiliza el comando `destro
 cd learn-terraform-aws-instance
 terraform destroy
 ```
+
+Este comando no destruye recursos en ejecución que no son administrados por el proyecto actual de Terraform.
+
+Responde `yes` para ejecutar el plan de destruir la infraestructura.
+
+```sh
+Enter a value: yes
+```
