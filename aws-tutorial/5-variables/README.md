@@ -86,3 +86,10 @@ Aplica la configuración y responde `yes` a la solicitud de confirmación.
 ```sh
 terraform apply
 ```
+
+Aplica la configuración de nuevo, esta vez anulando el nombre de instancia predeterminado pasando una variable usando el indicador `-var`.
+Terraform actualizara la etiqueta `Name` de la instancia con el nuevo nombre, confirma la solicitud con `yes`.
+
+```sh
+terraform apply -var "instance_name=YetAnotherName"
+```
